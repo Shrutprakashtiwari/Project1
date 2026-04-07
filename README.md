@@ -1,118 +1,82 @@
-#  Customer Churn Prediction: Model optimized for high recall to ensure maximum identification of potential churn customers, even at the cost of precision
+# 📊 Customer Churn Prediction
 
-##  Overview
+## 🚀 What this project is about
 
-This project focuses on predicting customer churn for a telecom company using machine learning techniques.
-The goal is to identify customers who are likely to leave so that the business can take proactive retention actions.
-This is made specially to focus on the people churning out.
-I did it without using pipeline.
+This project focuses on predicting whether a customer will churn or not. But instead of just building a model and reporting accuracy, the goal here was to understand how different models behave and how their predictions can be used in real-world decision making.
 
-##  Problem Statement
+---
 
-Customer churn leads to significant revenue loss.
-This project aims to build a predictive model that can:
+## 🧠 My Approach
 
-* Identify customers likely to churn
-* Help businesses reduce customer loss
-* Support data-driven decision making
+I didn’t rely on a single model. I experimented with multiple models to understand their strengths and weaknesses:
 
-##  Dataset
+* Logistic Regression → good for understanding patterns
+* Random Forest → balanced performance
+* XGBoost → aggressive prediction of churn
+* Ensemble Model → combines strengths of all models
 
-* Telecom Customer Churn Dataset (~7000 customers)
-* Features include:
+---
 
-  * Demographics (gender, senior citizen, etc.)
-  * Account information (tenure, contract type)
-  * Billing details (monthly charges, total charges)
-  * Services used (internet, streaming, etc.)
+## ⚙️ What I did differently
 
+Instead of stopping at model accuracy, I focused on:
 
-##  Exploratory Data Analysis (EDA)
+* Comparing multiple models
+* Understanding precision vs recall trade-off
+* Applying threshold tuning to control predictions
+* Building an ensemble model for better stability
 
-Key insights discovered:
+This helped me move from just “training models” to actually thinking about how predictions are used in practice.
 
-*  Customers with **low tenure** are more likely to churn
-*  Higher **monthly charges** are associated with higher churn
-*  **Month-to-month contracts** have the highest churn rate
-*  Long-term contracts significantly reduce churn
+---
 
+## 📊 Results
 
-##  Data Preprocessing
+| Model               | Recall   | Precision |
+| ------------------- | -------- | --------- |
+| Logistic Regression | 0.83     | 0.48      |
+| Random Forest       | 0.59     | 0.56      |
+| XGBoost             | 0.86     | 0.46      |
+| Ensemble (Final)    | **0.76** | **0.50**  |
 
-* Converted categorical Yes/No values → 0/1
-* Handled missing values in `TotalCharges`
-* Applied **One-Hot Encoding** for categorical features
-* Removed irrelevant columns (e.g., customerID)
+---
 
+## 🎯 Key Insight
 
-##  Models Used
+There is no single best model.
 
-### 1. Logistic Regression
+* High recall models catch more churners but create false alarms
+* High precision models are safer but miss customers
 
-* Baseline model
-* Tuned using class weights and threshold adjustment
+The final model balances both, depending on business needs.
 
-### 2. Random Forest (Best Performing)
+---
 
-* Provided balanced performance
-* Captured non-linear relationships effectively
+## 💡 What I learned
 
-### 3. XGBoost
+* Model selection is not the most important part
+* Threshold tuning can completely change results
+* Ensemble models provide more stable predictions
+* Real-world ML is about trade-offs, not perfect accuracy
 
-* Tested with hyperparameter tuning
-* Performance similar to Random Forest
+---
 
+## 📌 Conclusion
 
-##  Model Performance
+Most churn projects stop at building a model.
+This project goes a step further by focusing on decision-making and practical application.
 
-| Model               | Accuracy   | Recall (Churn) | Precision (Churn) |
-| ------------------- | ---------- | -------------- | ----------------- |
-| Logistic Regression | ~0.68–0.79 | up to 0.86     | ~0.45–0.62        |
-| Random Forest       | ~0.77      | ~0.58          | ~0.56             |
-| XGBoost             | ~0.69      | ~0.86          | ~0.46             |
+---
 
-
-##  Key Takeaways
-
-* There is a **trade-off between recall and precision**
-* High recall helps capture more churners but increases false positives
-* Random Forest provided the **best balance for practical use**
-* Feature understanding is as important as model selection
-
-
-
-##  Business Impact
-
-Using this model, a company can:
-
-* Identify high-risk customers early
-* Offer targeted retention strategies (discounts, support, etc.)
-* Reduce churn and improve revenue
-
-
-##  Technologies Used
+## 🛠️ Tech Used
 
 * Python
 * Pandas, NumPy
-* Seaborn, Matplotlib
 * Scikit-learn
 * XGBoost
+* SVM
+* Logistic Regression
+* Ensemble Learning
+* Voting Classifier
 
-
-##  Future Improvements
-
-* Feature engineering (e.g., usage patterns, customer behavior)
-* Hyperparameter tuning for advanced models
-* Deployment as a web app or API
-* Use of ensemble techniques
-
-
-##  Conclusion
-
-This project demonstrates an end-to-end machine learning pipeline, from data preprocessing to model evaluation and business interpretation.
-The focus is not just on accuracy, but on making **practical, data-driven decisions**.
-
-
-##  Author
-
-Shrut
+---
