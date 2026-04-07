@@ -5,6 +5,7 @@
 This project focuses on predicting customer churn for a telecom company using machine learning techniques.
 The goal is to identify customers who are likely to leave so that the business can take proactive retention actions.
 This is made specially to focus on the people churning out.
+I did it without using pipeline.
 
 ##  Problem Statement
 
