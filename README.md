@@ -1,4 +1,4 @@
-#  Customer Churn Prediction
+#  Customer Churn Prediction: Model optimized for high recall to ensure maximum identification of potential churn customers, even at the cost of precision
 
 ##  Overview
 
